@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import React from 'react';
+import Fullename from './Fullename'
+import Address from './Address'
+import Profilephoto from './Profilephoto';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Accordion} from 'react-bootstrap';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
+    
+    
+
+
+      <Accordion defaultActiveKey={['0']} alwaysOpen>
+  <Accordion.Item eventKey="0">
+    <Accordion.Header><Fullename /></Accordion.Header>
+    <Accordion.Body>
+    <Address />
+    <Profilephoto />
+    </Accordion.Body>
+  </Accordion.Item>
+  <Accordion.Item eventKey="1">
+    <Accordion.Header>Testing</Accordion.Header>
+    <Accordion.Body>
+      testing react bootstrap
+    </Accordion.Body>
+  </Accordion.Item>
+</Accordion>
     </div>
   );
 }
